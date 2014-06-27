@@ -12,12 +12,6 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-    lists:foreach(
-      fun(F)->
-              [$l, $r, $y|Tail]=lists:reverse(F),
-              ErlFile=lists:reverse(Tail)++"erl",
-              yecc:yecc(F, ErlFile)
-      end, ?PARSER_YRL_LIST),
     aini_sup:start_link().
 
 stop(_State) ->
