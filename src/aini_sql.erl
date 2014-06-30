@@ -1,10 +1,11 @@
 -module(aini_sql).
-
+-include("aini.hrl").
 -compile([export_all]).
 
 
 t(Str)->
     {_, Token, _}=erl_scan:string(Str),
+    ?log("~p~n", [Token]),
     {ok, ExprList}=aini_sql_parser:parse(Token),
     ExprList.
 

@@ -3,7 +3,7 @@
 
 -define(PARSER_YRL_LIST, ["./src/aini_sql_parser.yrl"]).
 
--define(stdout(Format, Args),
+-define(log(Format, Args),
         io:format("\033[00;33m~p [~s:~b]~n\033[0m"++Format,
                   [erlang:localtime(), ?FILE, ?LINE|Args])).
 
