@@ -4,8 +4,7 @@
 
 
 t(Str)->
-    {_, Token, _}=erl_scan:string(Str),
-    ?log("~p~n", [Token]),
+    {_, Token, _}=aini_sql_scanner:string(Str),
     {ok, ExprList}=aini_sql_parser:parse(Token),
     ExprList.
 
